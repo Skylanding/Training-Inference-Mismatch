@@ -33,7 +33,7 @@
 #
 # Other variables: SEED (0; vLLM seed 1000 + SEED), STEPS (40), SAVE_FREQ (5; 1 for the on-policy reference runs that
 # the replay and deviation measurements read), LR (1e-2; 5e-3 for the learning-rate check), N_GPUS (1; 8 for Qwen3-8B),
-# ESS_MIN (0.5), KERNELS (fa3_liger | sdpa), OUT_DIR (outputs/), RUN_PREFIX (run name prefix, see README), EXP (run name),
+# ESS_MIN (0.5), KERNELS (fa3_liger | sdpa), OUT_DIR (outputs/), RUN_PREFIX (run name prefix), EXP (run name),
 # TRAINER_LOGGER ([console,file]), DRY=1 (print the command and exit).
 #
 # Setup -> verl key mapping (keys verified at 8718ca30)
