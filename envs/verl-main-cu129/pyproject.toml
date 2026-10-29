@@ -1,0 +1,60 @@
+[project]
+name = "tim-verl-env"
+version = "0.0.0"
+description = "verl 8718ca30 + torch 2.13.0+cu129 + vllm 0.29.0+cu129 (FSDP + vLLM rollout; FA3 is built separately)"
+requires-python = "==3.12.*"
+dependencies = [
+    # verl itself, installed from git at an exact commit with the shared runtime extra only
+    # (verl-core: TransferQueue, pyzmq, msgspec, ray[default], tensordict, transformers, ...).
+    # NOT using verl's fsdp/vllm/cpu extras: they route to cu130, pull flash-attn and cupy-cuda13x.
+    "verl[verl-core]",
+    "torch==2.13.0",
+    "torchvision==0.28.0",
+    "torchaudio==2.11.0",
+    # cu129 vllm wheel (GitHub release asset); verl's own vllm extra would pin the PyPI (cu130) wheel.
+    "vllm",
+    "transformers==5.12.1",   # inside verl's >=5.5.3,!=5.6.0,<5.13; same as verl main's project-wide pin
+    "tensordict>=0.8.0,<=0.10.0,!=0.9.0",
+    "ray[default]>=2.41.0",
+    "numpy>=2.0.0",
+    "datasets>=4.0.0",   # unconstrained, the resolver picked datasets 1.1.1 (pa.PyExtensionType, gone in pyarrow 25)
+    "pytest",
+    "pytest-asyncio",
+    "pytest-rerunfailures",
+    # FSDP-path deps normally in verl's fsdp extra (minus flash-attn / cupy-cuda13x)
+    "liger-kernel>=0.8.2",
+    "math-verify",
+    "latex2sympy2_extended",
+]
+
+[tool.uv]
+environments = ["python_full_version >= '3.12' and sys_platform == 'linux' and platform_machine == 'x86_64'"]
+override-dependencies = [
+    "transformers==5.12.1",
+    "numpy>=2.0.0",
+    "kernels>=0.14.1,<0.15",
+    # defensive: never allow flash-attn or CUDA-13 artefacts
+    "flash-attn ; platform_machine == 'excluded'",
+    "flash-attn-4 ; platform_machine == 'excluded'",
+    "cupy-cuda13x ; platform_machine == 'excluded'",
+    # nvidia-cudnn-frontend 1.30 requires nvidia-cutlass-dsl[cu13]; drop the CUDA-13 libs (cu12 libs stay)
+    "nvidia-cutlass-dsl-libs-cu13 ; platform_machine == 'excluded'",
+]
+
+# TransferQueue installed deps-free, exactly as verl main does (its metadata asks for tensordict>=0.10.0 and unbounded ray);
+# verl-core already supplies what it imports.
+[[tool.uv.dependency-metadata]]
+name = "TransferQueue"
+requires-dist = []
+
+[tool.uv.sources]
+verl = { git = "https://github.com/verl-project/verl", rev = "8718ca30a3f002f93b7c4fd99b9b2506718681bc" }
+vllm = { url = "https://github.com/vllm-project/vllm/releases/download/v0.29.0/vllm-0.29.0+cu129-cp38-abi3-manylinux_2_28_x86_64.whl" }
+torch = { index = "pytorch-cu129" }
+torchvision = { index = "pytorch-cu129" }
+torchaudio = { index = "pytorch-cu129" }
+
+[[tool.uv.index]]
+name = "pytorch-cu129"
+url = "https://download.pytorch.org/whl/cu129"
+explicit = true

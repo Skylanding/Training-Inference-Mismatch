@@ -1,0 +1,12 @@
+# M2PO, VCPO and the resynchronized corrections on the two small models under the stale sampler, seed 0
+# (results/scale_8b/TABLES.md lists them next to Qwen3-8B; the paper's tables report Qwen3-8B only).
+# The 0.6B M2PO / VCPO runs carry the prefix s8a6, the others s8a.
+MODEL=Qwen/Qwen3-0.6B METHOD=m2po SOURCE=stale SEED=0 RUN_PREFIX=s8a6
+MODEL=Qwen/Qwen3-0.6B METHOD=vcpo SOURCE=stale SEED=0 RUN_PREFIX=s8a6
+MODEL=Qwen/Qwen3-0.6B METHOD=is_resync SOURCE=stale SEED=0 RUN_PREFIX=s8a
+MODEL=Qwen/Qwen3-0.6B METHOD=dlc SOURCE=stale SEED=0 RUN_PREFIX=s8a
+MODEL=Qwen/Qwen3-1.7B METHOD=m2po SOURCE=stale SEED=0 RUN_PREFIX=s8a
+MODEL=Qwen/Qwen3-1.7B METHOD=vcpo SOURCE=stale SEED=0 RUN_PREFIX=s8a
+MODEL=Qwen/Qwen3-1.7B METHOD=pg SOURCE=stale SEED=0 RUN_PREFIX=s8a
+MODEL=Qwen/Qwen3-1.7B METHOD=ppo SOURCE=stale SEED=0 RUN_PREFIX=s8a
+MODEL=Qwen/Qwen3-1.7B METHOD=is_sc SOURCE=stale SEED=0 RUN_PREFIX=s8a

@@ -1,0 +1,9 @@
+# On-policy reference runs of Qwen3-0.6B: the paired on-policy model of every deviation and the checkpoints the
+# replay measurements read (a checkpoint every step), then the same configuration trained again for the noise floor.
+# Run names: s2ref_bf16_pg_seed<k> and s2_bf16_pg_seed<k>.
+MODEL=Qwen/Qwen3-0.6B METHOD=on_policy SOURCE=none SEED=0 RUN_PREFIX=s2ref SAVE_FREQ=1
+MODEL=Qwen/Qwen3-0.6B METHOD=on_policy SOURCE=none SEED=1 RUN_PREFIX=s2ref SAVE_FREQ=1
+MODEL=Qwen/Qwen3-0.6B METHOD=on_policy SOURCE=none SEED=2 RUN_PREFIX=s2ref SAVE_FREQ=1
+MODEL=Qwen/Qwen3-0.6B METHOD=on_policy SOURCE=none SEED=0 RUN_PREFIX=s2
+MODEL=Qwen/Qwen3-0.6B METHOD=on_policy SOURCE=none SEED=1 RUN_PREFIX=s2
+MODEL=Qwen/Qwen3-0.6B METHOD=on_policy SOURCE=none SEED=2 RUN_PREFIX=s2

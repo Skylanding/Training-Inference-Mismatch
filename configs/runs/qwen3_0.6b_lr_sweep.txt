@@ -1,0 +1,8 @@
+# Learning-rate check of the loop (fig:loop e, f): score centering and importance sampling under the stale sampler
+# at half the learning rate. Run names s6b_stale64_<method>_seed<k>.
+MODEL=Qwen/Qwen3-0.6B METHOD=sc SOURCE=stale SEED=0 RUN_PREFIX=s6b LR=5e-3
+MODEL=Qwen/Qwen3-0.6B METHOD=is SOURCE=stale SEED=0 RUN_PREFIX=s6b LR=5e-3
+MODEL=Qwen/Qwen3-0.6B METHOD=sc SOURCE=stale SEED=1 RUN_PREFIX=s6b LR=5e-3
+MODEL=Qwen/Qwen3-0.6B METHOD=is SOURCE=stale SEED=1 RUN_PREFIX=s6b LR=5e-3
+MODEL=Qwen/Qwen3-0.6B METHOD=sc SOURCE=stale SEED=2 RUN_PREFIX=s6b LR=5e-3
+MODEL=Qwen/Qwen3-0.6B METHOD=is SOURCE=stale SEED=2 RUN_PREFIX=s6b LR=5e-3

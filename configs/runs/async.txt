@@ -1,0 +1,8 @@
+# Continuous asynchrony on Qwen3-1.7B (tab:async): weights pushed after every step, maximum version gap 4, one
+# trainer GPU and one sampler GPU per run, seed 0. Reference and noise floor are the s5ref / s5 runs of
+# qwen3_1.7b_stale.txt. Run names s9b_async4_<method>_seed0.
+MODEL=Qwen/Qwen3-1.7B METHOD=pg SOURCE=async SEED=0 RUN_PREFIX=s9b N_GPUS=2
+MODEL=Qwen/Qwen3-1.7B METHOD=is SOURCE=async SEED=0 RUN_PREFIX=s9b N_GPUS=2
+MODEL=Qwen/Qwen3-1.7B METHOD=m2po SOURCE=async SEED=0 RUN_PREFIX=s9b N_GPUS=2
+MODEL=Qwen/Qwen3-1.7B METHOD=dlc_async SOURCE=async SEED=0 RUN_PREFIX=s9b N_GPUS=2
+MODEL=Qwen/Qwen3-1.7B METHOD=dlc_admission SOURCE=async SEED=0 RUN_PREFIX=s9b N_GPUS=2

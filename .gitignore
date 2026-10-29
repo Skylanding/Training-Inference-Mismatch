@@ -1,0 +1,15 @@
+# data, training outputs and checkpoints
+data/
+outputs/
+checkpoints/
+ckpt/
+*.safetensors
+*.pt
+*.npz
+# environments
+.venv*/
+.fa3/
+# python
+__pycache__/
+*.pyc
+.pytest_cache/

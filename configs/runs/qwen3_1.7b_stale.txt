@@ -1,0 +1,30 @@
+# Qwen3-1.7B (tab:main right half, fig:range b-c, fig:slc, tab:cost). Checkpoints every 5 steps for all runs.
+# On-policy reference (s5ref) and its retraining for the noise floor (s5), the fixed corrections (s5), importance
+# sampling with resynchronization and DLC without resynchronization (s6c), and DLC (s7d).
+MODEL=Qwen/Qwen3-1.7B METHOD=on_policy SOURCE=none SEED=0 RUN_PREFIX=s5ref
+MODEL=Qwen/Qwen3-1.7B METHOD=on_policy SOURCE=none SEED=1 RUN_PREFIX=s5ref
+MODEL=Qwen/Qwen3-1.7B METHOD=on_policy SOURCE=none SEED=2 RUN_PREFIX=s5ref
+MODEL=Qwen/Qwen3-1.7B METHOD=on_policy SOURCE=none SEED=0 RUN_PREFIX=s5
+MODEL=Qwen/Qwen3-1.7B METHOD=on_policy SOURCE=none SEED=1 RUN_PREFIX=s5
+MODEL=Qwen/Qwen3-1.7B METHOD=on_policy SOURCE=none SEED=2 RUN_PREFIX=s5
+MODEL=Qwen/Qwen3-1.7B METHOD=is SOURCE=quantized SEED=0 RUN_PREFIX=s5
+MODEL=Qwen/Qwen3-1.7B METHOD=sc SOURCE=quantized SEED=0 RUN_PREFIX=s5
+MODEL=Qwen/Qwen3-1.7B METHOD=is SOURCE=stale SEED=0 RUN_PREFIX=s5
+MODEL=Qwen/Qwen3-1.7B METHOD=sc SOURCE=stale SEED=0 RUN_PREFIX=s5
+MODEL=Qwen/Qwen3-1.7B METHOD=is SOURCE=quantized SEED=1 RUN_PREFIX=s5
+MODEL=Qwen/Qwen3-1.7B METHOD=sc SOURCE=quantized SEED=1 RUN_PREFIX=s5
+MODEL=Qwen/Qwen3-1.7B METHOD=is SOURCE=stale SEED=1 RUN_PREFIX=s5
+MODEL=Qwen/Qwen3-1.7B METHOD=sc SOURCE=stale SEED=1 RUN_PREFIX=s5
+MODEL=Qwen/Qwen3-1.7B METHOD=is SOURCE=quantized SEED=2 RUN_PREFIX=s5
+MODEL=Qwen/Qwen3-1.7B METHOD=sc SOURCE=quantized SEED=2 RUN_PREFIX=s5
+MODEL=Qwen/Qwen3-1.7B METHOD=is SOURCE=stale SEED=2 RUN_PREFIX=s5
+MODEL=Qwen/Qwen3-1.7B METHOD=sc SOURCE=stale SEED=2 RUN_PREFIX=s5
+MODEL=Qwen/Qwen3-1.7B METHOD=is_resync SOURCE=stale SEED=0 RUN_PREFIX=s6c
+MODEL=Qwen/Qwen3-1.7B METHOD=is_resync SOURCE=stale SEED=1 RUN_PREFIX=s6c
+MODEL=Qwen/Qwen3-1.7B METHOD=is_resync SOURCE=stale SEED=2 RUN_PREFIX=s6c
+MODEL=Qwen/Qwen3-1.7B METHOD=dlc_noresync SOURCE=stale SEED=0 RUN_PREFIX=s6c
+MODEL=Qwen/Qwen3-1.7B METHOD=dlc_noresync SOURCE=stale SEED=1 RUN_PREFIX=s6c
+MODEL=Qwen/Qwen3-1.7B METHOD=dlc_noresync SOURCE=stale SEED=2 RUN_PREFIX=s6c
+MODEL=Qwen/Qwen3-1.7B METHOD=dlc SOURCE=stale SEED=0 RUN_PREFIX=s7d
+MODEL=Qwen/Qwen3-1.7B METHOD=dlc SOURCE=stale SEED=1 RUN_PREFIX=s7d
+MODEL=Qwen/Qwen3-1.7B METHOD=dlc SOURCE=stale SEED=2 RUN_PREFIX=s7d

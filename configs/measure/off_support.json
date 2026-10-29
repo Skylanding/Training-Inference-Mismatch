@@ -1,0 +1,155 @@
+{
+ "runs_06b": [
+  "s2_stale64_sc_seed0",
+  "s2_stale64_sc_seed1",
+  "s2_stale64_sc_seed2",
+  "s2_stale64_tis_seed0",
+  "s2_stale64_tis_seed1",
+  "s2_stale64_tis_seed2",
+  "s2_stale64_tis_sc_seed0",
+  "s2_stale64_tis_sc_seed1",
+  "s2_stale64_tis_sc_seed2",
+  "s2_stale64_split_seed0",
+  "s2_stale64_split_seed1",
+  "s2_stale64_split_seed2",
+  "s2_fp8_stale64_sc_seed0",
+  "s2_fp8_stale64_sc_seed1",
+  "s2_fp8_stale64_sc_seed2",
+  "s2_fp8_stale64_tis_seed0",
+  "s2_fp8_stale64_tis_seed1",
+  "s2_fp8_stale64_tis_seed2",
+  "s2_fp8_stale64_tis_sc_seed0",
+  "s2_fp8_stale64_tis_sc_seed1",
+  "s2_fp8_stale64_tis_sc_seed2",
+  "s2_fp8_stale64_split_seed0",
+  "s2_fp8_stale64_split_seed1",
+  "s2_fp8_stale64_split_seed2",
+  "s2_fp8_sc_seed0",
+  "s2_fp8_sc_seed1",
+  "s2_fp8_sc_seed2",
+  "s2_fp8_tis_seed0",
+  "s2_fp8_tis_seed1",
+  "s2_fp8_tis_seed2",
+  "s2ref_bf16_pg_seed0",
+  "s2ref_bf16_pg_seed1",
+  "s2ref_bf16_pg_seed2"
+ ],
+ "runs_17b": [
+  "s5_stale64_sc_seed0",
+  "s5_stale64_sc_seed1",
+  "s5_stale64_sc_seed2",
+  "s5_stale64_tis_seed0",
+  "s5_stale64_tis_seed1",
+  "s5_stale64_tis_seed2",
+  "s6c_budget_tis_seed0",
+  "s6c_budget_tis_seed1",
+  "s6c_budget_tis_seed2",
+  "s6c_stale64_split_seed0",
+  "s6c_stale64_split_seed1",
+  "s6c_stale64_split_seed2",
+  "s5ref_bf16_pg_seed0",
+  "s5ref_bf16_pg_seed1",
+  "s5ref_bf16_pg_seed2"
+ ],
+ "steps": {
+  "06b": [
+   10,
+   20,
+   30,
+   40
+  ],
+  "17b": [
+   10,
+   15,
+   20,
+   30,
+   40
+  ],
+  "8b": [
+   10,
+   15,
+   20,
+   30,
+   40
+  ]
+ },
+ "heldout": {
+  "n_prompts": 64,
+  "n_samples": 8,
+  "seed": 0
+ },
+ "n_own_per_prompt": 4,
+ "trainer_micro_batch": 16,
+ "p0_floor": 0.001,
+ "top_k0": 20,
+ "first_n_eos": 64,
+ "short": 64,
+ "probes": {
+  "06b": {
+   "probe": "data/probes/qwen3_0.6b/probe_set.npz"
+  },
+  "17b": {
+   "probe": "data/probes/theta0_qwen3_1.7b.npz",
+   "probe_s1": "data/probes/qwen3_0.6b/probe_set.npz"
+  },
+  "8b": {
+   "probe": "data/probes/theta0_qwen3_8b.npz"
+  }
+ },
+ "collapsed": [
+  "s6c_budget_tis_seed0",
+  "s6c_stale64_split_seed0",
+  "s6c_stale64_split_seed2"
+ ],
+ "existing": {
+  "deviation": {
+   "06b": "results/deviation_0.6b/steps.csv",
+   "17b": "results/deviation_1.7b/steps.csv",
+   "8b": "results/deviation_8b/steps.csv"
+  },
+  "noise_floor_run": {
+   "06b": "s2_bf16_pg_seed{seed}",
+   "17b": "s5_bf16_pg_seed{seed}",
+   "8b": "s8b_bf16_pg_seed{seed}"
+  },
+  "mu_4c": {
+   "06b": "results/split_0.6b/steps.csv",
+   "17b": "results/split_1.7b/steps.csv"
+  }
+ },
+ "results_dir": "results/off_support",
+ "runs_7d": [
+  "s7d_budget_split_seed0",
+  "s7d_budget_split_seed1",
+  "s7d_budget_split_seed2"
+ ],
+ "spearman_exclude_prefixes": [
+  "s7d",
+  "s8a",
+  "s8a6",
+  "s8b",
+  "s9b"
+ ],
+ "runs_8b": [
+  "s8b_stale64_pg_seed0",
+  "s8b_stale64_ppo_seed0",
+  "s8b_stale64_sc_seed0",
+  "s8b_stale64_tis_seed0",
+  "s8b_stale64_tis_sc_seed0",
+  "s8b_budget_tis_seed0",
+  "s8b_stale64_m2po_seed0",
+  "s8b_stale64_vcpo_seed0",
+  "s8b_budget_split_seed0",
+  "s8b_bf16_pg_seed0",
+  "s8ref_bf16_pg_seed0"
+ ],
+ "runs_9b_async": [
+  "s9b_async4_pg_seed0",
+  "s9b_async4_tis_seed0",
+  "s9b_async4_m2po_seed0",
+  "s9b_async4_split_async_seed0",
+  "s9b_async4_split_async_ess_seed0"
+ ],
+ "_doc": "Off-support measurement on saved checkpoints (scripts/measure.py off-support with --config the model file): held-out accuracy, D_own and its off-support share (p_theta0(y) < p0_floor) on 256 own responses, D_q on theta_0's probe prefixes. Runs with a prefix in spearman_exclude_prefixes are kept out of the correlation table and the collapsed-run percentiles.",
+ "seed_own": "9000 + j (tim/measure/off_support/pure.py SEED_OWN)"
+}
