@@ -1,6 +1,7 @@
 # On the Origin and Evolution of Training-Inference Mismatch in LLM Reinforcement Learning
 
 [![arXiv](https://img.shields.io/badge/arXiv-2610.40945-b31b1b.svg)](https://arxiv.org/abs/2610.40945)
+[![Hugging Face Paper](https://img.shields.io/badge/%F0%9F%A4%97%20Paper-2610.40945-ffd21e.svg)](https://huggingface.co/papers/2610.40945)
 
 **Yu Li**<sup>1,\*</sup>, **Yufa Zhou**<sup>2,\*</sup>, **Tian Lan**<sup>1</sup>
 
