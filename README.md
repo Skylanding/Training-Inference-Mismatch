@@ -1,6 +1,8 @@
 # On the Origin and Evolution of Training-Inference Mismatch in LLM Reinforcement Learning
 
-Code for the paper by Yu Li, Yufa Zhou and Tian Lan.
+[![arXiv](https://img.shields.io/badge/arXiv-2610.40945-b31b1b.svg)](https://arxiv.org/abs/2610.40945)
+
+Code for the paper by Yu Li, Yufa Zhou and Tian Lan ([arXiv:2610.40945](https://arxiv.org/abs/2610.40945), [PDF](https://arxiv.org/pdf/2610.40945)).
 
 Evaluating the trainer at the sampler's weights splits each sampled-token error into a **numerical discrepancy** of
 the engine and a **policy lag** of the trainer. The **discrepancy-lag correction (DLC)** centers the discrepancy, clips
@@ -72,7 +74,7 @@ TIM_GPU_TESTS=1 python -m pytest tests/gpu -q
 @article{li2026tim,
   title   = {On the Origin and Evolution of Training-Inference Mismatch in LLM Reinforcement Learning},
   author  = {Li, Yu and Zhou, Yufa and Lan, Tian},
-  journal = {arXiv preprint arXiv:TODO},
+  journal = {arXiv preprint arXiv:2610.40945},
   year    = {2026}
 }
 ```
