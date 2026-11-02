@@ -3,6 +3,9 @@
 <p align="center">
   <a href="https://arxiv.org/abs/2610.40945"><img src="https://img.shields.io/badge/arXiv-2610.40945-b31b1b.svg" alt="arXiv"></a>
   <a href="https://huggingface.co/papers/2610.40945"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Paper-2610.40945-ffd21e.svg" alt="Hugging Face Paper"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
+  <a href="https://github.com/volcengine/verl/tree/8718ca30"><img src="https://img.shields.io/badge/verl-8718ca30-4b8bbe.svg" alt="verl 8718ca30"></a>
+  <a href="https://github.com/vllm-project/vllm/releases/tag/v0.29.0"><img src="https://img.shields.io/badge/vLLM-0.29.0-30a2ff.svg" alt="vLLM 0.29.0"></a>
 </p>
 
 Evaluating the trainer at the sampler's weights splits each sampled-token error into a **numerical discrepancy** of
