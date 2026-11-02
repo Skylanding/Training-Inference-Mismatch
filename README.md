@@ -2,7 +2,9 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-2610.40945-b31b1b.svg)](https://arxiv.org/abs/2610.40945)
 
-Code for the paper by Yu Li, Yufa Zhou and Tian Lan ([arXiv:2610.40945](https://arxiv.org/abs/2610.40945), [PDF](https://arxiv.org/pdf/2610.40945)).
+**Yu Li**<sup>1,\*</sup>, **Yufa Zhou**<sup>2,\*</sup>, **Tian Lan**<sup>1</sup>
+
+<sup>1</sup>George Washington University &nbsp; <sup>2</sup>Duke University &nbsp; <sup>\*</sup>Equal contribution
 
 Evaluating the trainer at the sampler's weights splits each sampled-token error into a **numerical discrepancy** of
 the engine and a **policy lag** of the trainer. The **discrepancy-lag correction (DLC)** centers the discrepancy, clips
