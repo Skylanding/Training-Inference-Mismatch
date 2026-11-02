@@ -1,7 +1,9 @@
 # On the Origin and Evolution of Training-Inference Mismatch in LLM Reinforcement Learning
 
-[![arXiv](https://img.shields.io/badge/arXiv-2610.40945-b31b1b.svg)](https://arxiv.org/abs/2610.40945)
-[![Hugging Face Paper](https://img.shields.io/badge/%F0%9F%A4%97%20Paper-2610.40945-ffd21e.svg)](https://huggingface.co/papers/2610.40945)
+<p align="center">
+  <a href="https://arxiv.org/abs/2610.40945"><img src="https://img.shields.io/badge/arXiv-2610.40945-b31b1b.svg" alt="arXiv"></a>
+  <a href="https://huggingface.co/papers/2610.40945"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Paper-2610.40945-ffd21e.svg" alt="Hugging Face Paper"></a>
+</p>
 
 Evaluating the trainer at the sampler's weights splits each sampled-token error into a **numerical discrepancy** of
 the engine and a **policy lag** of the trainer. The **discrepancy-lag correction (DLC)** centers the discrepancy, clips
